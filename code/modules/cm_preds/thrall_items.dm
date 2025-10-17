@@ -65,27 +65,32 @@
 		/obj/item/weapon/gun/pistol/action,
 		/obj/item/weapon/gun/pistol/clfpistol,
 		/obj/item/weapon/straight_razor,
+		/obj/item/weapon/yautja/knife
 	)
 
 /obj/item/clothing/shoes/yautja/thrall/silver
 	icon_state = "thrallgreaves_silver"
 	item_state = "thrallgreaves_silver"
 	item_state_slots = list(WEAR_FEET = "thrallgreaves_silver")
+	spawn_item_type = /obj/item/weapon/yautja/knife
 
 /obj/item/clothing/shoes/yautja/thrall/gold
 	icon_state = "thrallgreaves_gold"
 	item_state = "thrallgreaves_gold"
 	item_state_slots = list(WEAR_FEET = "thrallgreaves_gold")
+	spawn_item_type = /obj/item/weapon/yautja/knife
 
 /obj/item/clothing/shoes/yautja/thrall/crimson
 	icon_state = "thrallgreaves_crimson"
 	item_state = "thrallgreaves_crimson"
 	item_state_slots = list(WEAR_FEET = "thrallgreaves_crimson")
+	spawn_item_type = /obj/item/weapon/yautja/knife
 
 /obj/item/clothing/shoes/yautja/thrall/bone
 	icon_state = "thrallgreaves_bone"
 	item_state = "thrallgreaves_bone"
 	item_state_slots = list(WEAR_FEET = "thrallgreaves_bone")
+	spawn_item_type = /obj/item/weapon/yautja/knife
 
 ///Thrall Mask Material Types, original mask & mask code in yaut_mask.dm
 /obj/item/clothing/mask/gas/yautja/thrall/silver
