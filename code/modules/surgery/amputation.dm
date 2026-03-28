@@ -18,6 +18,10 @@
 		/datum/surgery_step/close_amputation,
 	)
 
+/datum/surgery/amputate/can_start(mob/user, mob/living/carbon/patient, obj/limb/L, obj/item/tool)
+	if(!locate(/obj/structure/machinery/optable) in get_turf(patient))
+		return FALSE
+
 //Mend the stump left by a traumatic amputation. Can be performed by medics/nurses. Torn-off limbs should bleed heavily.
 /datum/surgery/amputate/repair
 	name = "Repair Traumatic Amputation Stump"
