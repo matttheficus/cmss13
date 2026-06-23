@@ -210,6 +210,32 @@ GLOBAL_LIST_INIT(misc_flags, list(
 	target_rights = 0
 	new_rights = 0
 
+/client/proc/council_create_AI_apollo_report()
+	set name = "Report: ARES Apollo"
+	set category = "OOC.Whitelist"
+
+	if(!check_whitelist_status(WHITELIST_SYNTHETIC_COUNCIL))
+		to_chat(src, SPAN_WARNING("Only the Synthetic Council may use this command."))
+		return
+
+	if(!ares_is_active())
+		to_chat(usr, SPAN_WARNING("[MAIN_AI_SYSTEM] is destroyed, and cannot talk!"))
+		return FALSE
+
+	var/input = tgui_input_text(usr, "This is a broadcast from the ship AI to Working Joes and Maintenance Drones. Do not use html.", "What?", "")
+	if(!input)
+		return FALSE
+
+	if(!ares_can_apollo())
+		var/prompt = tgui_alert(src, "ARES APOLLO processor is offline or destroyed, send the message anyways?", "Choose.", list("Yes", "No"), 20 SECONDS)
+		if(prompt != "Yes")
+			to_chat(usr, SPAN_WARNING("[MAIN_AI_SYSTEM] is not responding. It's APOLLO processor may be offline or destroyed."))
+			return FALSE
+
+	ares_apollo_talk(input)
+	message_admins("[key_name(src)] has created an AI APOLLO report")
+	log_admin("AI APOLLO report: [input]")
+
 
 #undef WL_PANEL_RIGHT_CO
 #undef WL_PANEL_RIGHT_SYNTH

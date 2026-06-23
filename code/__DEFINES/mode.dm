@@ -196,6 +196,7 @@ GLOBAL_LIST_INIT(whitelist_hierarchy, list(WHITELIST_NORMAL, WHITELIST_COUNCIL, 
 #define isCouncil(A) (A.check_whitelist_status_list(COUNCIL_LIST))
 #define isSenator(A) (A.check_whitelist_status_list(SENATOR_LIST))
 #define isYautjaCouncil(A) (A.check_whitelist_status(WHITELIST_YAUTJA_COUNCIL))
+#define isSyntheticCouncil(A) (A.check_whitelist_status(WHITELIST_SYNTHETIC_COUNCIL))
 
 DEFINE_BITFIELD(whitelist_status, list(
 	"WHITELIST_YAUTJA" = WHITELIST_YAUTJA,
